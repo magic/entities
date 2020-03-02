@@ -1,0 +1,52 @@
+{
+  "name": "@magic/entities",
+  "version": "0.0.1",
+  "author": "Wizards & Witches",
+  "description": "exports most html entities and utility functions.",
+  "license": "AGPL-3.0",
+  "homepage": "https://magic.github.io/entities",
+  "scripts": {
+    "start": "t -p",
+    "build": "NODE_ENV=production magic build",
+    "prod": "NODE_ENV=production magic build serve --watch src",
+    "clean": "magic clean",
+    "serve": "magic serve",
+    "dev": "magic dev --watch src",
+    "format": "f -w --exclude docs",
+    "test": "t --exclude docs example config.js",
+    "calls": "calls"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=13.5.0"
+  },
+  "engineStrict": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magic/entities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/magic/entities/issues"
+  },
+  "main": "src/index.mjs",
+  "dependencies": {
+    "@magic/types": "0.1.11"
+  },
+  "devDependencies": {
+    "@magic/format": "0.0.7",
+    "@magic/test": "0.1.37"
+  },
+  "keywords": [
+    "html",
+    "entities",
+    "magic"
+  ],
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    }
+  ]
+}
