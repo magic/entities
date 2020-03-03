@@ -86,5 +86,8 @@ entityFromId('lt') // '&#lt;'
 ##### 0.0.1
 first commit
 
-##### 0.0.2 - unreleased
+##### 0.0.2 
+add quot for quotation marks. #quot; is a thing...
+
+##### 0.0.3 - unreleased
 ...
