@@ -42,7 +42,7 @@ export const entityFromId = id => {
 export const entities = [
   [32, ' ', 'nbsp', 'Space'],
   [33, '!', '', 'Exclamation mark'],
-  [34, '"', '', 'Quotation mark'],
+  [34, '"', 'quot', 'Quotation mark'],
   [35, '#', '', 'Number sign'],
   [36, '$', '', 'Dollar sign'],
   [37, '%', '', 'Percent sign'],
