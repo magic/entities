@@ -20,7 +20,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=13.5.0"
+    "node": ">=14.2.0"
   },
   "engineStrict": true,
   "repository": {
@@ -32,11 +32,11 @@
   },
   "main": "src/index.mjs",
   "dependencies": {
-    "@magic/types": "0.1.11"
+    "@magic/types": "0.1.12"
   },
   "devDependencies": {
-    "@magic/format": "0.0.8",
-    "@magic/test": "0.1.41"
+    "@magic/format": "0.0.11",
+    "@magic/test": "0.1.47"
   },
   "keywords": [
     "html",
