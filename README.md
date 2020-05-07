@@ -89,5 +89,8 @@ first commit
 ##### 0.0.2 
 add quot for quotation marks. #quot; is a thing...
 
-##### 0.0.3 - unreleased
+##### 0.0.3
+bump required node version to 14.2.0
+
+##### 0.0.4 - unreleased
 ...
