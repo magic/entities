@@ -86,7 +86,7 @@ entityFromId('lt') // '&#lt;'
 ##### 0.0.1
 first commit
 
-##### 0.0.2 
+##### 0.0.2
 add quot for quotation marks. #quot; is a thing...
 
 ##### 0.0.3
@@ -101,6 +101,7 @@ update @magic/types
 
 ##### 0.0.6
 update dependencies
+update @magic/test devdependency
 
 ##### 0.0.7 - unreleased
 ...
