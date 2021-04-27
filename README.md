@@ -99,5 +99,8 @@ update @magic/types
 * bump required node version to 14.15.4
 * update dependencies
 
-##### 0.0.6 - unreleased
+##### 0.0.6
+update dependencies
+
+##### 0.0.7 - unreleased
 ...
