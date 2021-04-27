@@ -32,11 +32,11 @@
   },
   "main": "src/index.mjs",
   "dependencies": {
-    "@magic/types": "0.1.14"
+    "@magic/types": "0.1.15"
   },
   "devDependencies": {
-    "@magic/format": "0.0.20",
-    "@magic/test": "0.1.59"
+    "@magic/format": "0.0.22",
+    "@magic/test": "0.1.66"
   },
   "keywords": [
     "html",
