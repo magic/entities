@@ -31,8 +31,8 @@
     "@magic/types": "0.1.16"
   },
   "devDependencies": {
-    "@magic/format": "0.0.30",
-    "@magic/test": "0.1.75"
+    "@magic/format": "0.0.31",
+    "@magic/test": "0.1.76"
   },
   "keywords": [
     "html",
