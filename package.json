@@ -1,6 +1,6 @@
 {
   "name": "@magic/entities",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Wizards & Witches",
   "description": "exports most html entities and utility functions.",
   "license": "AGPL-3.0",
