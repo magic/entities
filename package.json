@@ -28,11 +28,11 @@
   },
   "main": "src/index.mjs",
   "dependencies": {
-    "@magic/types": "0.1.19"
+    "@magic/types": "0.1.20"
   },
   "devDependencies": {
-    "@magic/format": "0.0.38",
-    "@magic/test": "0.2.8"
+    "@magic/format": "0.0.39",
+    "@magic/test": "0.2.10"
   },
   "keywords": [
     "html",
