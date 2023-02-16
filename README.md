@@ -45,7 +45,6 @@ const item = entities[4]
 const [numId, symbol, stringId, info] = item
 
 // not all entities have a stringId or a symbol.
-
 ```
 
 ### isEntity
@@ -54,15 +53,12 @@ isEntity can test if a string is a valid entity.
 
 isEntity also tests if the string exists in the entities list.
 
-
 ```javascript
 import { isEntity } from '@magic/entities'
 
 isEntity('&#39;') // true
-isEntity(39)      // false
-
+isEntity(39) // false
 ```
-
 
 ### entityFromId
 
@@ -77,49 +73,60 @@ import { entityFromId } from '@magic/entities'
 
 entityFromId(39) // '&#39;'
 entityFromId('lt') // '&#lt;'
-
 ```
-
 
 #### changelog
 
 ##### 0.0.1
+
 first commit
 
 ##### 0.0.2
+
 add quot for quotation marks. #quot; is a thing...
 
 ##### 0.0.3
+
 bump required node version to 14.2.0
 
 ##### 0.0.4
+
 update @magic/types
 
 ##### 0.0.5
-* bump required node version to 14.15.4
-* update dependencies
+
+- bump required node version to 14.15.4
+- update dependencies
 
 ##### 0.0.6
+
 update dependencies
 update @magic/test devdependency
 
 ##### 0.0.7
+
 update dependencies
 
 ##### 0.0.8
+
 update dependencies
 
 ##### 0.0.9
+
 update dependencies
 
 ##### 0.0.10
+
 update dependencies
 
 ##### 0.0.11
+
 update dependencies
 
 ##### 0.0.12
+
 update dependencies
 
 ##### 0.0.13 - unreleased
+
 ...
