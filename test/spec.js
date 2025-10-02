@@ -1,5 +1,5 @@
 import { is } from '@magic/test'
-import defaultEntities, { entities, isEntity, entityFromId } from '../src/index.mjs'
+import defaultEntities, { entities, isEntity, entityFromId } from '../src/index.js'
 
 export default [
   { fn: is.array(entities), info: 'entities is an array' },

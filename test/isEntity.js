@@ -1,4 +1,4 @@
-import { entities, isEntity } from '../src/index.mjs'
+import { entities, isEntity } from '../src/index.js'
 
 export default [
   { fn: isEntity('&#39;'), info: 'can detect numeric entities' },

@@ -1,4 +1,4 @@
-import { entityFromId } from '../src/index.mjs'
+import { entityFromId } from '../src/index.js'
 
 export default [
   { fn: entityFromId(39), expect: '&#39;', info: 'can handle numbers' },
