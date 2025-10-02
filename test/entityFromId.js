@@ -1,8 +1,35 @@
-import { entityFromId } from '../src/index.js'
+import { entities, entityFromId } from '../src/index.js'
 
 export default [
-  { fn: entityFromId(39), expect: '&#39;', info: 'can handle numbers' },
-  { fn: entityFromId('lt'), expect: '&lt;', info: 'can handle strings' },
-  { fn: entityFromId('&#39;'), expect: '&#39;', info: 'returns valid entity numerics unchanged' },
-  { fn: entityFromId('&#lt;'), expect: '&#lt;', info: 'returns valid entity strings unchanged' },
+  // Test numeric IDs
+  ...entities.map(([id, _char, _name, desc]) => ({
+    fn: entityFromId(id),
+    expect: `&#${id};`,
+    info: `can handle numeric ID ${id} (${desc})`,
+  })),
+
+  // Test named entities (only those with names)
+  ...entities
+    .filter(([_id, _char, name]) => name !== '')
+    .map(([_id, _char, name, desc]) => ({
+      fn: entityFromId(name),
+      expect: `&${name};`,
+      info: `can handle named entity '${name}' (${desc})`,
+    })),
+
+  // Test already formatted numeric entities
+  ...entities.map(([id, _char, _name, desc]) => ({
+    fn: entityFromId(`&#${id};`),
+    expect: `&#${id};`,
+    info: `returns valid numeric entity &#${id}; unchanged (${desc})`,
+  })),
+
+  // Test already formatted named entities (only those with names)
+  ...entities
+    .filter(([_id, _char, name]) => name !== '')
+    .map(([_id, _char, name, desc]) => ({
+      fn: entityFromId(`&${name};`),
+      expect: `&${name};`,
+      info: `returns valid named entity &${name}; unchanged (${desc})`,
+    })),
 ]
