@@ -12,19 +12,25 @@ export const isEntity = ent => {
     return false
   }
 
-  // remove first and last char, -2 is intended
-  const id = ent.substring(1, ent.length - 2)
+  // if string startswith &# as second char, remove the first two
+  const isNumericId = ent.startsWith('&#')
+  const indexToRemove = isNumericId ? 2 : 1
+  const indexToCompare = isNumericId ? 0 : 2
+
+  // remove first and last char
+  const id = ent.substring(indexToRemove, ent.length - 1)
 
   // is numerical id
-  if (id.startsWith('#')) {
-    const idWithoutHash = id.substring(1)
-    const numericId = parseInt(idWithoutHash, 10)
+  // if (id.startsWith('#')) {
+  //   const idWithoutHash = id.substring(1)
+  //   const numericId = parseInt(idWithoutHash, 10)
 
-    return entities.some(e => e[0] === numericId)
-  }
+  //   return entities.some(e => e[0] === numericId)
+  // }
 
   // is named id
-  return entities.some(e => e[2] === id)
+  const isValidEntity = entities.some(e => `${e[indexToCompare]}` === id)
+  return isValidEntity
 }
 
 /**
