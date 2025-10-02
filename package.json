@@ -32,7 +32,8 @@
   },
   "devDependencies": {
     "@magic/format": "0.0.68",
-    "@magic/test": "0.2.20"
+    "@magic/test": "0.2.20",
+    "typescript": "5.9.3"
   },
   "keywords": [
     "html",
