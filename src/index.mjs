@@ -1,24 +1,37 @@
 import { is } from '@magic/types'
 
+/** @typedef {[number, string, string, string]} Entity */
+
+/**
+ *
+ * @param {string} ent
+ * @returns {e is Entity}
+ */
 export const isEntity = ent => {
   if (is.empty(ent) || !is.string(ent) || !ent.startsWith('&') || !ent.endsWith(';')) {
     return false
   }
 
   // remove first and last char, -2 is intended
-  let id = ent.substr(1, ent.length - 2)
+  const id = ent.substring(1, ent.length - 2)
 
   // is numerical id
   if (id.startsWith('#')) {
-    id = parseInt(id.substr(1), 10)
+    const idWithoutHash = id.substring(1)
+    const numericId = parseInt(idWithoutHash, 10)
 
-    return entities.some(e => e[0] === id)
+    return entities.some(e => e[0] === numericId)
   }
 
   // is named id
   return entities.some(e => e[2] === id)
 }
 
+/**
+ *
+ * @param {string | number} id
+ * @returns {string}
+ */
 export const entityFromId = id => {
   if (isEntity(id)) {
     return id
@@ -39,7 +52,8 @@ export const entityFromId = id => {
   return id
 }
 
-export const entities = [
+/** @type {Entity[]} */
+export const entities = /** @type {const} */ ([
   [32, ' ', 'nbsp', 'Space'],
   [33, '!', '', 'Exclamation mark'],
   [34, '"', 'quot', 'Quotation mark'],
@@ -368,6 +382,6 @@ export const entities = [
   [9827, '♣', 'clubs', 'Club'],
   [9829, '♥', 'hearts', 'Heart'],
   [9830, '♦', 'diams', 'Diamond'],
-]
+])
 
 export default entities
