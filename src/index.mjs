@@ -1,46 +1,40 @@
 import { is } from '@magic/types'
 
-/** @typedef {[number, string, string, string]} Entity */
-
 /**
- *
- * @param {string} ent
- * @returns {e is Entity}
+ * Checks if a given string or number is a valid HTML entity reference
+ * @param {string | number} ent - The entity to validate (e.g., '&nbsp;', '&#32;', or 32)
+ * @returns {boolean} True if the entity exists in the entities list
  */
 export const isEntity = ent => {
-  if (is.empty(ent) || !is.string(ent) || !ent.startsWith('&') || !ent.endsWith(';')) {
+  if (is.number(ent)) {
+    ent = `${ent}`
+  }
+
+  if (!is.string(ent) || is.empty(ent) || !ent.startsWith('&') || !ent.endsWith(';')) {
     return false
   }
 
-  // if string startswith &# as second char, remove the first two
+  // if string startswith &, remove the first character
+  // if string startswith &#, remove the first two characters
   const isNumericId = ent.startsWith('&#')
   const indexToRemove = isNumericId ? 2 : 1
   const indexToCompare = isNumericId ? 0 : 2
 
-  // remove first and last char
+  // remove chars based on isNumericId
+  // remove last character, the semicolon.
   const id = ent.substring(indexToRemove, ent.length - 1)
 
-  // is numerical id
-  // if (id.startsWith('#')) {
-  //   const idWithoutHash = id.substring(1)
-  //   const numericId = parseInt(idWithoutHash, 10)
-
-  //   return entities.some(e => e[0] === numericId)
-  // }
-
-  // is named id
-  const isValidEntity = entities.some(e => `${e[indexToCompare]}` === id)
-  return isValidEntity
+  return entities.some(e => `${e[indexToCompare]}` === id)
 }
 
 /**
- *
- * @param {string | number} id
- * @returns {string}
+ * Converts a numeric ID or named entity into a proper HTML entity format
+ * @param {string | number} id - The entity identifier (e.g., 32, 'nbsp', or '&nbsp;')
+ * @returns {string} Formatted HTML entity string (e.g., '&#32;' or '&nbsp;')
  */
 export const entityFromId = id => {
   if (isEntity(id)) {
-    return id
+    return `${id}`
   }
 
   if (is.number(id)) {
@@ -58,7 +52,6 @@ export const entityFromId = id => {
   return id
 }
 
-/** @type {Entity[]} */
 export const entities = /** @type {const} */ ([
   [32, ' ', 'nbsp', 'Space'],
   [33, '!', '', 'Exclamation mark'],

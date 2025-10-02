@@ -8,12 +8,16 @@
   "type": "module",
   "scripts": {
     "start": "t -p",
+    "build": "npm run test && tsc && npm run format",
+    "prepublishOnly": "npm run build",
+    "lint:types": "tsc --noEmit",
     "format": "f -w --exclude docs",
     "test": "t --exclude docs example config.js",
     "calls": "calls"
   },
   "files": [
-    "src"
+    "src",
+    "types"
   ],
   "engines": {
     "node": ">=14.15.4"
