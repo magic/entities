@@ -136,6 +136,10 @@ update dependencies
 - update dependencies
 - add typescript and jsdoc types
 
-##### 0.0.15 - unreleased
+##### 0.0.15
+
+- update dependencies
+
+##### 0.0.16 - unreleased
 
 ...
