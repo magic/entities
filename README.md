@@ -145,6 +145,10 @@ update dependencies
 - update tsconfig for typescript 6.0.x
 - update dependencies
 
-##### 0.0.17 - unreleased
+##### 0.0.17
+
+- fix main field in package.json
+
+##### 0.0.18 - unreleased
 
 ...
