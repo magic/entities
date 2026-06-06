@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/magic/entities/issues"
   },
-  "main": "src/index.mjs",
+  "main": "src/index.js",
   "dependencies": {
     "@magic/types": "0.1.37"
   },
