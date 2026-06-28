@@ -149,6 +149,10 @@ update dependencies
 
 - fix main field in package.json
 
-##### 0.0.18 - unreleased
+##### 0.0.18
+
+- update dependencies
+
+##### 0.0.19 - unreleased
 
 ...
